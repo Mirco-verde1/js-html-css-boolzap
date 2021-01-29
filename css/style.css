@@ -9,6 +9,12 @@ img{
   width: 57px;
   border-radius: 50px;
 }
+
+.clear-fix{
+  display: table;
+  clear: both;
+  content: '';
+}
 /* CONTENITORE PRINCIPALE DELL'APP */
 .main-container{
   width: 100vw;
@@ -84,6 +90,7 @@ img{
   display: flex;
   align-items: center;
 }
+
 .no-sound{
   width: 56px;
   height: 53px;
@@ -108,6 +115,42 @@ img{
   color: rgb(177,177,177);
 }
 
+/* BARRA RICERCA DOPO NOME UTENTE LEFT SIDE APP */
+.search-bar{
+  height: 40px;
+  width: 100%;
+  background: rgb(249, 249, 251);
+}
+.input-search-container{
+width: 90%;
+height: 90%;
+margin: 0 auto;
+background: #fff;
+line-height: 35px;
+}
+.input-search-container>input{
+  width: 70%;
+  border: none;
+  font-size: 14px;
+}
+.input-search-container>.fas{
+color: rgb(177,177,177);
+padding:0 24px 0 15px;
+}
+/* LISTA DEI NOMI IN MEMORIA MESSAGGI */
+
+.names-tab{
+  background: #fff;
+  width: 100%;
+  height: 73%;
+  overflow-y: scroll;
+}
+
+.names-list{
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid  rgb(177,177,177);
+}
 /* CARTE CENTRALE DI APP CONTAINER DIVISA IN PARTE TOP & BOTTOM */
 .main-content{
   width: 65%;
@@ -126,9 +169,15 @@ img{
   width: 100%;
   height: 58px;
   background:rgba(234, 234, 234);
+  display: flex;
 }
-
-
+.text-access{
+  padding-left: 5px;
+}
+.text-access span:nth-child(1){
+  display: block;
+  padding-top: 12PX;
+}
 
 
 

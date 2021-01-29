@@ -5,12 +5,13 @@
   integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
   crossorigin="anonymous" />
   <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <meta charset="utf-8">
   <title></title>
 </head>
 <body>
   <!-- CONTENITORE PRINCIPALE -->
-  <div class="main-container">
+  <div class="main-container" id="myBoolZap">
     <div class="green-row">
 
     </div>
@@ -20,7 +21,7 @@
 
 
     <!-- CONTENITORE DELL'APP -->
-    <div class="app-container">
+    <div class="app-container ">
 
 
       <!-- PARTE SINISTRA DELL'APP -->
@@ -46,6 +47,7 @@
         </div>
 
 
+        <!--PARTE IN CUI INSERISCO LA SEARCHBAR ----------->
 
         <div class="under-username-top">
 
@@ -62,6 +64,27 @@
 
         </div>
 
+
+        <div class="search-bar">
+
+          <div class="input-search-container">
+
+            <i class="fas fa-search"></i>
+
+            <input type="text" name="" placeholder="Cerca o inizia una nuova chat" value="">
+
+          </div>
+
+        </div>
+        <!-- /* LISTA DEI NOMI IN MEMORIA MESSAGGI */ -->
+
+        <div class="names-tab">
+
+          <div class="names-list" v-for="(names,index) in contacts">{{names.name}}</div>
+          <img :src = " './img/avatar'+ contacts.avatar "alt="">
+
+        </div>
+
       </div>
 
 
@@ -69,8 +92,27 @@
       <!-- QUESTA è LA PARTE CENTRALE DELL'APP -->
       <div class="main-content">
 
+
+        <!-- PARTE SUPERIORE 'ULTIMO ACCESSO' -->
+
         <div class="main-top">
+
+
+
           <div class="name-talk-to">
+
+            <div class="elem-container">
+
+              <img src="./img/avatar_1.jpg" alt="">
+            </div>
+
+<!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
+
+            <div class="text-access">
+              <span>Michele</span>
+              <span>Ultimo accesso oggi alle</span>
+
+            </div>
 
           </div>
         </div>
@@ -89,6 +131,6 @@
 
     <!-- end main container -->
   </div>
-
+  <script src="js/script.js" charset="utf-8"></script>
 </body>
 </html>
