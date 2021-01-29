@@ -3,6 +3,12 @@
   margin-left: 0;
   padding: 0;
 }
+
+/* TUTTE LE MIE IMMAGINI IN QUESTA APP AVRANNO LE STESSE CARATTERISTICHE */
+img{
+  width: 57px;
+  border-radius: 50px;
+}
 /* CONTENITORE PRINCIPALE DELL'APP */
 .main-container{
   width: 100vw;
@@ -25,12 +31,12 @@
 /* QUI ANDRANNO I CONTENUTI DELLA MIA APP */
 .app-container{
   width: 92%;
-    height: 92%;
-    margin: 0 auto;
-    border: 1px solid black;
-    position: absolute;
-    top: 30px;
-    left: 4%;
+  height: 92%;
+  margin: 0 auto;
+  border: 1px solid black;
+  position: absolute;
+  top: 30px;
+  left: 4%;
 }
 /* LEFT SIDE DELL'APP */
 .side-left{
@@ -40,19 +46,66 @@
   border-right: 1px solid #b8b894;
 }
 
+/* PARTE SUPERIORE LEFT SIDE */
 .user-name-top{
   width: 100%;
   height: 58px;
   background: rgba(234, 234, 234);
   border-right: 1px solid #b8b894;
   display: flex;
+  justify-content: space-between;
 
 }
 
+.user-name{
+  width: 40%;
+  height: 58px;
+}
+.user-name img{
+  vertical-align: middle;
+  margin-left: 15px;
+}
+.right-part-username-row{
+  height: 58px;
+  width:
+}
+.right-part-username-row ul li{
+  display: inline-block;
+  list-style: none;
+  padding-right: 10px;
+  color: rgb(177,177,177);
+}
+
+/* ROW SOTTO USER-NAME */
 .under-username-top{
   width: 100%;
   height: 69px;
   background: rgb(142, 218, 252);
+  display: flex;
+  align-items: center;
+}
+.no-sound{
+  width: 56px;
+  height: 53px;
+  background: white;
+  color: rgb(142, 218, 252);
+  text-align: center;
+  line-height: 42px;
+  font-size: 19px;
+  border-radius: 26px;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+.no-sound>.fas{
+  line-height: 50px;
+}
+
+.new-notice span:nth-child(1){
+  display: block;
+}
+.new-notice span:nth-child(2){
+  border-bottom: 1px solid rgb(177,177,177);
+  color: rgb(177,177,177);
 }
 
 /* CARTE CENTRALE DI APP CONTAINER DIVISA IN PARTE TOP & BOTTOM */
