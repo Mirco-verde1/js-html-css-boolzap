@@ -81,7 +81,7 @@
         <div class="names-tab">
 
           <div class="names-list" v-for="(names,index) in contacts">{{names.name}}</div>
-          <img :src = " './img/avatar'+ contacts.avatar "alt="">
+          <!-- <img :src = " './img/avatar'+ contacts.avatar "alt=""> -->
 
         </div>
 
@@ -106,7 +106,7 @@
               <img src="./img/avatar_1.jpg" alt="">
             </div>
 
-<!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
+            <!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
 
             <div class="text-access">
               <span>Michele</span>
@@ -114,14 +114,44 @@
 
             </div>
 
+            <div class="row-name-talk-to-right">
+
+              <i class="fas fa-search"></i>
+              <i class="fas fa-paperclip"></i>
+              <i class="fas fa-ellipsis-v"></i>
+
+            </div>
+
+
+
+
           </div>
+
+
         </div>
 
 
 
         <div class="main-bottom">
 
+          <div class="smile">
+            <i class="far fa-smile"></i>
+          </div>
+
+          <div class="typing">
+            <input type="text" placeholder="Scrivi il tuo messaggio"name="" value="">
+
+          </div>
+
+          <div class="microphone">
+            <i class="fas fa-microphone"></i>
+
+          </div>
+
+
         </div>
+
+
       </div>
 
 
