@@ -80,8 +80,11 @@
 
         <div class="names-tab">
 
-          <div class="names-list" v-for="(names,index) in contacts">{{names.name}}</div>
-          <!-- <img :src = " './img/avatar'+ contacts.avatar "alt=""> -->
+          <div class="names-list" v-for="names in contacts">
+            <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="">
+            {{names.name}}
+         </div>
+
 
         </div>
 
