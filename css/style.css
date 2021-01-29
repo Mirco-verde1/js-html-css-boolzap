@@ -1,0 +1,87 @@
+*{
+  box-sizing: border-box;
+  margin-left: 0;
+  padding: 0;
+}
+/* CONTENITORE PRINCIPALE DELL'APP */
+.main-container{
+  width: 100vw;
+  min-width: 950px;
+  height: 100vh;
+
+}
+.green-row{
+  width: 100%;
+  height: 16%;
+  background:rgb(0,151,136);
+}
+
+.grey-row{
+  width: 100%;
+  height: 80%;
+  background: #d7dbd7;
+}
+
+/* QUI ANDRANNO I CONTENUTI DELLA MIA APP */
+.app-container{
+  width: 92%;
+    height: 92%;
+    margin: 0 auto;
+    border: 1px solid black;
+    position: absolute;
+    top: 30px;
+    left: 4%;
+}
+/* LEFT SIDE DELL'APP */
+.side-left{
+  width: 35%;
+  height: 100%;
+  float: left;
+  border-right: 1px solid #b8b894;
+}
+
+.user-name-top{
+  width: 100%;
+  height: 58px;
+  background: rgba(234, 234, 234);
+  border-right: 1px solid #b8b894;
+  display: flex;
+
+}
+
+.under-username-top{
+  width: 100%;
+  height: 69px;
+  background: rgb(142, 218, 252);
+}
+
+/* CARTE CENTRALE DI APP CONTAINER DIVISA IN PARTE TOP & BOTTOM */
+.main-content{
+  width: 65%;
+  height: 100%;
+  float: left;
+}
+
+/* PARTE SUPERIORE DELLA SEZIONE MAIN */
+.main-top{
+  width: 100%;
+  height: calc(100% - 80px);
+  background-image: url(../img/mine.jpg);
+}
+
+.name-talk-to{
+  width: 100%;
+  height: 58px;
+  background:rgba(234, 234, 234);
+}
+
+
+
+
+
+.main-bottom{
+  height: 80px;
+  width: 100%;
+  border: 1px solid red;
+
+}
