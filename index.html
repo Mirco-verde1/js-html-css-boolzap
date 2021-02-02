@@ -109,13 +109,13 @@
 
             <div class="elem-container">
 
-              <img src="./img/avatar_1.jpg" alt="">
+              <img :src="'./img/avatar'+contacts[idxConct].avatar+'.jpg' " alt="immagine del contatto">
             </div>
 
             <!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
 
             <div class="text-access">
-              <span>Michele</span>
+              <span>{{contacts[idxConct].name}}</span>
               <span>Ultimo accesso oggi alle</span>
 
             </div>
