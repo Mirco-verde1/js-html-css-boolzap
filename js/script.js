@@ -92,6 +92,15 @@ var app = new Vue({
    idxConct: 0,
 
 
+   userMessage:'',
+   userMessageList: [],
+
+
+   answer:'ooookkk',
+   answerList:[]
+
+
+
 
  },
 
@@ -99,6 +108,19 @@ var app = new Vue({
 
 showContactMessages:function(index){
   this.idxConct = index;
+},
+
+takeUserInput:function(arrayUsed,userMsg){
+  arrayUsed.push(userMsg)
+},
+
+answerToUser:function(answer , answerList){
+   setTimeout(function(){
+    answerList.push(answer)
+    }
+
+   , 1000)
+
 }
 
  }

@@ -81,104 +81,121 @@
         <div class="names-tab">
 
           <div class="names-list" v-for="(names,index) in contacts"
-           @click="showContactMessages(index)">
+          @click="showContactMessages(index)">
 
-            <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
+          <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
 
-            <span>{{names.name}}</span>
-          </div>
-
-
-        </div>
-
-      </div>
-
-
-
-      <!-- QUESTA è LA PARTE CENTRALE DELL'APP -->
-      <div class="main-content">
-
-
-        <!-- PARTE SUPERIORE 'ULTIMO ACCESSO' -->
-
-        <div class="main-top">
-
-
-
-          <div class="name-talk-to">
-
-            <div class="elem-container">
-
-              <img :src="'./img/avatar'+contacts[idxConct].avatar+'.jpg' " alt="immagine del contatto">
-            </div>
-
-            <!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
-
-            <div class="text-access">
-              <span>{{contacts[idxConct].name}}</span>
-              <span>Ultimo accesso oggi alle</span>
-
-            </div>
-
-            <div class="row-name-talk-to-right">
-
-              <i class="fas fa-search"></i>
-              <i class="fas fa-paperclip"></i>
-              <i class="fas fa-ellipsis-v"></i>
-
-            </div>
-
-
-
-
-          </div>
-
-
-          <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
-        <div class="container-messages" v-for=" element in contacts[idxConct].messages"
-         :class= "{
-           received:(element.status === 'received'),
-           sent:(element.status === 'sent')
-
-         }">
-
-            {{element.text}}
-
+          <span>{{names.name}}</span>
         </div>
 
 
       </div>
-
-
-
-      <div class="main-bottom">
-
-        <div class="smile">
-          <i class="far fa-smile"></i>
-        </div>
-
-        <div class="typing">
-          <input type="text" placeholder="Scrivi il tuo messaggio"name="" value="">
-
-        </div>
-
-        <div class="microphone">
-          <i class="fas fa-microphone"></i>
-
-        </div>
-
-
-      </div>
-
 
     </div>
 
 
 
+    <!-- QUESTA è LA PARTE CENTRALE DELL'APP -->
+    <div class="main-content">
+
+
+      <!-- PARTE SUPERIORE 'ULTIMO ACCESSO' -->
+
+      <div class="main-top">
+
+
+
+        <div class="name-talk-to">
+
+          <div class="elem-container">
+
+            <img :src="'./img/avatar'+contacts[idxConct].avatar+'.jpg' " alt="immagine del contatto">
+          </div>
+
+          <!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
+
+          <div class="text-access">
+            <span>{{contacts[idxConct].name}}</span>
+            <span>Ultimo accesso oggi alle</span>
+
+          </div>
+
+          <div class="row-name-talk-to-right">
+
+            <i class="fas fa-search"></i>
+            <i class="fas fa-paperclip"></i>
+            <i class="fas fa-ellipsis-v"></i>
+
+          </div>
+
+
+
+
+        </div>
+
+
+        <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
+        <div class="container-messages" v-for=" element in contacts[idxConct].messages"
+        :class= "{
+          received:(element.status === 'received'),
+          sent:(element.status === 'sent')
+
+        }">
+
+        {{element.text}}
+
+      </div>
+
+
+      <div v-for="msg in userMessageList" :class="{
+        sent:true
+      }">
+      {{msg}}
+    </div>
+
+    <span v-for="elem in answerList":class="{
+      received:true
+    }">
+    {{elem}}
+    </span>
+
+
+</div>
+
+
+<!-- PARTE IN CUI VENGONO SCRITTI I MESSAGGI -->
+<div class="main-bottom">
+
+  <div class="smile">
+    <i class="far fa-smile"></i>
+  </div>
+
+  <div class="typing">
+
+    <!-- INPUT BAR -->
+    <input v-model="userMessage"  type="text" placeholder="Scrivi il tuo messaggio" name="" @keyup.enter="takeUserInput(userMessageList,userMessage),
+    answerToUser(answer,answerList)">
 
   </div>
 
-  <!-- end main container -->
+
+  <div class="microphone">
+    <i class="fas fa-microphone"></i>
+
+  </div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+<!-- end main container -->
 </div>
 <script src="js/script.js" charset="utf-8"></script>
 </body>
