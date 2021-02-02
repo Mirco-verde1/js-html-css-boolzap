@@ -31,7 +31,7 @@
         <div class="user-name-top">
 
           <div class="user-name">
-            <img src="./img/avatar_io.jpg" alt="">
+            <img src="./img/avatar_io.jpg" alt="immagine profilo utente">
             <span>Nome Utente</span>
           </div>
 
@@ -81,9 +81,9 @@
         <div class="names-tab">
 
           <div class="names-list" v-for="names in contacts">
-            <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="">
-            {{names.name}}
-         </div>
+            <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
+            <span>{{names.name}}</span>
+          </div>
 
 
         </div>
@@ -131,26 +131,15 @@
           </div>
 
 
-        </div>
+          <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
+        <div class="container-messages" v-for=" element in contacts[0].messages"
+         :class= "{
+           received:(element.status === 'received'),
+           sent:(element.status === 'sent')
 
+         }">
 
-
-        <div class="main-bottom">
-
-          <div class="smile">
-            <i class="far fa-smile"></i>
-          </div>
-
-          <div class="typing">
-            <input type="text" placeholder="Scrivi il tuo messaggio"name="" value="">
-
-          </div>
-
-          <div class="microphone">
-            <i class="fas fa-microphone"></i>
-
-          </div>
-
+            {{element.text}}
 
         </div>
 
@@ -159,11 +148,35 @@
 
 
 
+      <div class="main-bottom">
+
+        <div class="smile">
+          <i class="far fa-smile"></i>
+        </div>
+
+        <div class="typing">
+          <input type="text" placeholder="Scrivi il tuo messaggio"name="" value="">
+
+        </div>
+
+        <div class="microphone">
+          <i class="fas fa-microphone"></i>
+
+        </div>
+
+
+      </div>
+
 
     </div>
 
-    <!-- end main container -->
+
+
+
   </div>
-  <script src="js/script.js" charset="utf-8"></script>
+
+  <!-- end main container -->
+</div>
+<script src="js/script.js" charset="utf-8"></script>
 </body>
 </html>

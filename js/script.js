@@ -1,6 +1,6 @@
 var app = new Vue({
  el: '#myBoolZap',
- 
+
  data:{
    contacts: [
        {
@@ -86,15 +86,16 @@ var app = new Vue({
                }
            ],
        },
-   ]
+   ],
 
 
- }
-
-
+   idxConct: 0,
 
 
 
+ },
+
+ methods:{}
 
 });
 

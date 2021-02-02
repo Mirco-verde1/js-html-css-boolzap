@@ -37,6 +37,7 @@ img{
 /* QUI ANDRANNO I CONTENUTI DELLA MIA APP */
 .app-container{
   width: 92%;
+  min-width: 950px;
   height: 92%;
   margin: 0 auto;
   position: absolute;
@@ -151,6 +152,14 @@ padding:0 24px 0 15px;
   height: 80px;
   border-bottom: 1px solid  rgb(177,177,177);
 }
+.names-list img{
+  vertical-align: text-top;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+.names-list span{
+  padding: 5px 10px;
+}
 /* PARTE CENTRALE DI APP CONTAINER DIVISA IN PARTE TOP & BOTTOM */
 .main-content{
   width: 65%;
@@ -164,7 +173,6 @@ padding:0 24px 0 15px;
   height: calc(100% - 80px);
   background-image: url(../img/mine.jpg);
 }
-
 .name-talk-to{
   width: 100%;
   height: 58px;
@@ -192,6 +200,44 @@ padding:0 24px 0 15px;
   color: rgb(177,177,177);
   }
 
+
+  /* PARTE IN CUI VERRANNO VISUALIZZATI I MESSAGGI */
+  .container-messages{
+  width: 100%;
+  height: auto;
+  }
+  .boxmessages{
+    min-height: 50px;
+    max-width: 40%;
+    max-height: 50%;
+    background: #fff;
+  }
+  .received{
+    padding: 16px;
+    clear: both;
+    text-align: center;
+    margin: 35px;
+    float: left;
+    width: 240px;
+    min-height: 50px;
+    max-height: 60%;
+    background: #fff;
+    border-radius: 10px;
+
+  }
+
+  .sent{
+    padding: 16px;
+    clear: both;
+    text-align: center;
+    margin: 35px;
+    float: right;
+    width: 240px;
+    min-height: 50px;
+    max-height: 60%;
+    background: #d9ffb3;
+    border-radius: 10px;
+  }
 
 .main-bottom{
   width: 100%;
