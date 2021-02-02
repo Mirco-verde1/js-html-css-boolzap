@@ -80,8 +80,11 @@
 
         <div class="names-tab">
 
-          <div class="names-list" v-for="names in contacts">
+          <div class="names-list" v-for="(names,index) in contacts"
+           @click="showContactMessages(index)">
+
             <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
+
             <span>{{names.name}}</span>
           </div>
 
@@ -132,7 +135,7 @@
 
 
           <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
-        <div class="container-messages" v-for=" element in contacts[0].messages"
+        <div class="container-messages" v-for=" element in contacts[idxConct].messages"
          :class= "{
            received:(element.status === 'received'),
            sent:(element.status === 'sent')

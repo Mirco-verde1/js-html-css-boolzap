@@ -95,7 +95,13 @@ var app = new Vue({
 
  },
 
- methods:{}
+ methods:{
+
+showContactMessages:function(index){
+  this.idxConct = index;
+}
+
+ }
 
 });
 
