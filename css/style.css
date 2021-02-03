@@ -207,6 +207,22 @@ content: '';
   width: 100%;
   height: auto;
 }
+.deleteMessage{
+display: none;
+width: 160px;
+height:100px;
+background: grey;
+}
+.deleteMessage ul li{
+  list-style: none;
+}
+.fa-chevron-down{
+  position:absolute;
+  top:2px;
+  right:10px;
+  color: #b3b3b3;
+}
+
 .boxmessages{
   min-height: 50px;
   max-width: 40%;
@@ -214,6 +230,7 @@ content: '';
   background: #fff;
 }
 .received{
+  position: relative;
   padding: 16px;
   clear: both;
   text-align: center;
@@ -228,6 +245,7 @@ content: '';
 }
 
 .sent{
+  position: relative;
   padding: 16px;
   clear: both;
   text-align: center;
