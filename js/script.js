@@ -103,6 +103,8 @@ var app = new Vue({
       idxRandomAnsw :0,
       inputSearchingContacts:'',
 
+      idxSearchContacts:0
+
     },
 
     methods:{
@@ -146,35 +148,57 @@ var app = new Vue({
 
       },
 
-// ricerca contatti nella lista tramite searchbar
-      searchingContacts:function(){
+      // ricerca contatti nella lista tramite searchbar
+      // searchingContacts:function(){
+      //
+      //   let names;
+      //   let searchName;
+      //   let result;
+      //   let idxSearch
+      //
+      //   this.contacts.forEach((item,i) => {
+      //
+      //
+      //     names = item.name,
+      //     idxSearch= i,
+      //
+      //     searchName = names.toLowerCase().startsWith(this.inputSearchingContacts);
+      //
+      //
+      //     if (searchName === true) {
+      //       result = names;
+      //       idxSearch= i;
+      //
+      //       var finalResult = this.contacts[idxSearch];
+      //
+      //       this.inputSearchingContacts = ''
+      //     }
+      //  console.log(finalResult);
+      //
+      //
+      //
+      //
+      //   })
+      //
+      //
+      // },
 
-        let names;
-        let searchName;
-        let result;
+       searchingContacts:function(){
 
-        this.contacts.forEach((item, i) => {
+         this.contacts.forEach((item, i) => {
+           if (item.name.toLowerCase().includes(this.inputSearchingContacts.toLowerCase())) {
+             item.visible = true;
+           }
+           else {
+             item.visible = false;
 
+           }
 
-          names = item.name,
+         });
+       this.inputSearchingContacts = ''
+       
+       }
 
-          searchName = names.toLowerCase().startsWith(this.inputSearchingContacts);
-
-
-          if (searchName === true) {
-            result = names;
-            console.log(result);
-          }
-
-
-
-
-        })
-
-          this.inputSearchingContacts = ''
-          return result;
-
-      }
 
 
     }

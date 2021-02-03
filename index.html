@@ -72,7 +72,7 @@
           <div class="input-search-container">
 
             <i class="fas fa-search"></i>
-
+            <!-- prendo l'input della search bar  -->
             <input type="text" name="" v-model="inputSearchingContacts"
             placeholder="Cerca o inizia una nuova chat" value=""
             @keyup.enter="searchingContacts()">
@@ -81,15 +81,20 @@
 
 
         </div>
+
+
         <!-- /* LISTA DEI NOMI IN MEMORIA MESSAGGI */ -->
 
         <div class="names-tab">
-          <!--AL CLICK MOSTRO I MESSAGGI IN MEMORIA PER OGNI CONTATTO
-          INOLTRE AL CLICK SU UN NUOVO CONTATTO CANCELLO I MESSAGGI
-          PRECEDENTI-->
+
+
+
+          <!--AL CLICK MOSTRO I MESSAGGI IN MEMORIA PER OGNI CONTACTS-->
+          <!--in base alla ricerca mostro i contatti cercati
+          con names.visible -->
 
           <div class="names-list" v-for="(names,index) in contacts"
-          @click="showContactMessages(index)">
+          @click="showContactMessages(index)" v-if="names.visible">
 
           <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
 
@@ -116,7 +121,7 @@
         <div class="name-talk-to">
 
           <div class="elem-container">
-
+            <!--immagine profilo contacts generata dinamicamente  -->
             <img :src="'./img/avatar'+contacts[idxConct].avatar+'.jpg' " alt="immagine del contatto">
           </div>
 
@@ -143,6 +148,7 @@
 
 
         <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
+        <!-- i messaggi verranno suddivisi e verra attribuita loro la classe received||sent -->
         <div class="container-messages" v-for=" element in contacts[idxConct].messages"
         :class= "{
           received:(element.status === 'received'),
@@ -168,8 +174,9 @@
       <div class="typing">
 
         <!-- INPUT BAR -->
+        <!-- l'input scritto dall'utente viene stampato in pagina,dopo 1 sec genero risposta automatica -->
         <input v-model="userMessage"  type="text" placeholder="Scrivi il tuo messaggio" name=""
-        @keyup.enter="userMessageSend(),contactAnswer(),searchingContacts()">
+        @keyup.enter="userMessageSend(),contactAnswer()">
 
       </div>
 
