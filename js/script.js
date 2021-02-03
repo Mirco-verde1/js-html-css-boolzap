@@ -97,7 +97,9 @@ var app = new Vue({
 
 
    answer:'ooookkk',
-   answerList:[]
+   answerList:[],
+
+   cleanBox:[]
 
 
 
@@ -119,8 +121,14 @@ answerToUser:function(answer , answerList){
     answerList.push(answer)
     }
 
-   , 1000)
+   , 1200)
 
+},
+// FUNZIONE CHE AZZERA I MESSAGGI MANDATI E RICEVUTI
+// IN PRECEDENZA,CLICCANDO SUL NUOVO CONTATTO NELLA LISTA
+cleanBoxMessage:function(list){
+  list.splice(list,list.length);
+  return list;
 }
 
  }

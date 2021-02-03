@@ -79,9 +79,14 @@
         <!-- /* LISTA DEI NOMI IN MEMORIA MESSAGGI */ -->
 
         <div class="names-tab">
-
+        <!--AL CLICK MOSTRO I MESSAGGI IN MEMORIA PER OGNI CONTATTO
+            INOLTRE AL CLICK SU UN NUOVO CONTATTO CANCELLO I MESSAGGI
+            PRECEDENTI-->
+            
           <div class="names-list" v-for="(names,index) in contacts"
-          @click="showContactMessages(index)">
+          @click="showContactMessages(index),
+          cleanBoxMessage(userMessageList),
+          cleanBoxMessage(answerList)">
 
           <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
 
@@ -147,17 +152,17 @@
       </div>
 
 
-      <div v-for="msg in userMessageList" :class="{
+      <span v-for="msg in userMessageList" :class="{
         sent:true
       }">
       {{msg}}
-    </div>
+    </span>
 
-    <span v-for="elem in answerList":class="{
+    <span v-for="elem in answerList" :class="{
       received:true
     }">
     {{elem}}
-    </span>
+  </span>
 
 
 </div>
