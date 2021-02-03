@@ -125,7 +125,7 @@ var app = new Vue({
         this.contacts[this.idxConct].messages.push(message)
       },
 
-// risposta automatica
+// risposta automatica dopo 1 secondo
       contactAnswer:function(){
         const message = {
           date: '10/01/2020 15:30:55',
@@ -135,7 +135,7 @@ var app = new Vue({
         let that=this;
         setTimeout(function(){
             that.contacts[that.idxConct].messages.push(message)
-        },1200)
+        },1000)
 
       }
 
