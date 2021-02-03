@@ -103,6 +103,9 @@ var app = new Vue({
     },
 
     methods:{
+  // metodo per data
+
+
 // risposte random
       randomAutoAnswer:function(){
         this.idxRandomAnsw = this.autoAnswer.length

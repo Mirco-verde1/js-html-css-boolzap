@@ -132,7 +132,7 @@ content: '';
 .input-search-container>input{
   width: 70%;
   border: none;
-  font-size: 14px;
+  font-size: 18px;
 }
 .input-search-container>.fas{
   color: rgb(177,177,177);
@@ -217,7 +217,7 @@ content: '';
   padding: 16px;
   clear: both;
   text-align: center;
-  margin: 35px;
+  margin: 15px;
   float: left;
   width: 240px;
   min-height: 50px;
@@ -231,7 +231,7 @@ content: '';
   padding: 16px;
   clear: both;
   text-align: center;
-  margin: 35px;
+  margin: 15px;
   float: right;
   width: 240px;
   min-height: 50px;
