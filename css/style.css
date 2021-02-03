@@ -11,9 +11,9 @@ img{
 }
 /*
 .clear-fix{
-  display: table;
-  clear: both;
-  content: '';
+display: table;
+clear: both;
+content: '';
 } */
 /* CONTENITORE PRINCIPALE DELL'APP */
 .main-container{
@@ -123,11 +123,11 @@ img{
   background: rgb(249, 249, 251);
 }
 .input-search-container{
-width: 90%;
-height: 90%;
-margin: 0 auto;
-background: #fff;
-line-height: 35px;
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  background: #fff;
+  line-height: 35px;
 }
 .input-search-container>input{
   width: 70%;
@@ -135,8 +135,8 @@ line-height: 35px;
   font-size: 14px;
 }
 .input-search-container>.fas{
-color: rgb(177,177,177);
-padding:0 24px 0 15px;
+  color: rgb(177,177,177);
+  padding:0 24px 0 15px;
 }
 /* LISTA DEI NOMI IN MEMORIA MESSAGGI */
 
@@ -199,46 +199,46 @@ padding:0 24px 0 15px;
   justify-content: space-between;
   padding-top: 20px;
   color: rgb(177,177,177);
-  }
+}
 
 
-  /* PARTE IN CUI VERRANNO VISUALIZZATI I MESSAGGI */
-  .container-messages{
+/* PARTE IN CUI VERRANNO VISUALIZZATI I MESSAGGI */
+.container-messages{
   width: 100%;
   height: auto;
-  }
-  .boxmessages{
-    min-height: 50px;
-    max-width: 40%;
-    max-height: 50%;
-    background: #fff;
-  }
-  .received{
-    padding: 16px;
-    clear: both;
-    text-align: center;
-    margin: 35px;
-    float: left;
-    width: 240px;
-    min-height: 50px;
-    max-height: 60%;
-    background: #fff;
-    border-radius: 10px;
+}
+.boxmessages{
+  min-height: 50px;
+  max-width: 40%;
+  max-height: 50%;
+  background: #fff;
+}
+.received{
+  padding: 16px;
+  clear: both;
+  text-align: center;
+  margin: 35px;
+  float: left;
+  width: 240px;
+  min-height: 50px;
+  max-height: 60%;
+  background: #fff;
+  border-radius: 10px;
 
-  }
+}
 
-  .sent{
-    padding: 16px;
-    clear: both;
-    text-align: center;
-    margin: 35px;
-    float: right;
-    width: 240px;
-    min-height: 50px;
-    max-height: 60%;
-    background: #d9ffb3;
-    border-radius: 10px;
-  }
+.sent{
+  padding: 16px;
+  clear: both;
+  text-align: center;
+  margin: 35px;
+  float: right;
+  width: 240px;
+  min-height: 50px;
+  max-height: 60%;
+  background: #d9ffb3;
+  border-radius: 10px;
+}
 
 .main-bottom{
   width: 100%;
@@ -258,5 +258,5 @@ padding:0 24px 0 15px;
 
 .main-bottom{
   font-size: 20px;
-color: rgb(177,177,177);
+  color: rgb(177,177,177);
 }

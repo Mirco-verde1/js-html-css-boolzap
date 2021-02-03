@@ -79,14 +79,12 @@
         <!-- /* LISTA DEI NOMI IN MEMORIA MESSAGGI */ -->
 
         <div class="names-tab">
-        <!--AL CLICK MOSTRO I MESSAGGI IN MEMORIA PER OGNI CONTATTO
-            INOLTRE AL CLICK SU UN NUOVO CONTATTO CANCELLO I MESSAGGI
-            PRECEDENTI-->
-            
+          <!--AL CLICK MOSTRO I MESSAGGI IN MEMORIA PER OGNI CONTATTO
+          INOLTRE AL CLICK SU UN NUOVO CONTATTO CANCELLO I MESSAGGI
+          PRECEDENTI-->
+
           <div class="names-list" v-for="(names,index) in contacts"
-          @click="showContactMessages(index),
-          cleanBoxMessage(userMessageList),
-          cleanBoxMessage(answerList)">
+          @click="showContactMessages(index)">
 
           <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
 
@@ -152,48 +150,35 @@
       </div>
 
 
-      <span v-for="msg in userMessageList" :class="{
-        sent:true
-      }">
-      {{msg}}
-    </span>
-
-    <span v-for="elem in answerList" :class="{
-      received:true
-    }">
-    {{elem}}
-  </span>
+    </div>
 
 
-</div>
+    <!-- PARTE IN CUI VENGONO SCRITTI I MESSAGGI -->
+    <div class="main-bottom">
+
+      <div class="smile">
+        <i class="far fa-smile"></i>
+      </div>
+
+      <div class="typing">
+
+        <!-- INPUT BAR -->
+        <input v-model="userMessage"  type="text" placeholder="Scrivi il tuo messaggio" name=""
+        @keyup.enter="userMessageSend(),contactAnswer()">
+
+      </div>
 
 
-<!-- PARTE IN CUI VENGONO SCRITTI I MESSAGGI -->
-<div class="main-bottom">
+      <div class="microphone">
+        <i class="fas fa-microphone"></i>
 
-  <div class="smile">
-    <i class="far fa-smile"></i>
-  </div>
-
-  <div class="typing">
-
-    <!-- INPUT BAR -->
-    <input v-model="userMessage"  type="text" placeholder="Scrivi il tuo messaggio" name="" @keyup.enter="takeUserInput(userMessageList,userMessage),
-    answerToUser(answer,answerList)">
-
-  </div>
+      </div>
 
 
-  <div class="microphone">
-    <i class="fas fa-microphone"></i>
+    </div>
+
 
   </div>
-
-
-</div>
-
-
-</div>
 
 
 
