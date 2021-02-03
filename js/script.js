@@ -108,6 +108,13 @@ var app = new Vue({
     },
 
     methods:{
+      getContactsDate:function(){
+        let date = new Date();
+        let dateString = date.toLocaleString();
+        dateString= dateString.replace(',','')
+        console.log(dateString);
+        return dateString;
+      },
 
 
       // risposte random
@@ -126,7 +133,7 @@ var app = new Vue({
       // metodo con il quale stampo i messaggi scritti nell'input bar
       userMessageSend:function(){
         const message = {
-          date: '10/01/2020 15:30:55',
+          date: this.getContactsDate(),
           text: this.userMessage,
           status: 'sent'
         }
@@ -137,7 +144,7 @@ var app = new Vue({
       // risposta automatica dopo 1 secondo
       contactAnswer:function(){
         const message = {
-          date: '10/01/2020 15:30:55',
+          date: this.getContactsDate(),
           text: this.randomAutoAnswer(),
           status: 'received'
         }
@@ -196,10 +203,8 @@ var app = new Vue({
 
          });
        this.inputSearchingContacts = ''
-       
-       }
 
-
+     }
 
     }
 

@@ -94,7 +94,7 @@
           con names.visible -->
 
           <div class="names-list" v-for="(names,index) in contacts"
-          @click="showContactMessages(index)" v-if="names.visible">
+          @click="showContactMessages(index),getContactsDate()" v-if="names.visible">
 
           <img :src="'./img/avatar'+ names.avatar +'.jpg'"alt="immagine profilo contacts">
 
@@ -127,9 +127,9 @@
 
           <!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
 
-          <div class="text-access">
+          <div class="text-access" >
             <span>{{contacts[idxConct].name}}</span>
-            <span>{{contacts[idxConct].messages.date}}</span>
+            <span>Ultimo accesso: {{getContactsDate()}}</span>
 
           </div>
 
@@ -175,7 +175,7 @@
 
         <!-- INPUT BAR -->
         <!-- l'input scritto dall'utente viene stampato in pagina,dopo 1 sec genero risposta automatica -->
-        <input v-model="userMessage"  type="text" placeholder="Scrivi il tuo messaggio" name=""
+        <input v-model="userMessage" type="text" placeholder="Scrivi il tuo messaggio" name=""
         @keyup.enter="userMessageSend(),contactAnswer()">
 
       </div>
