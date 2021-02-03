@@ -47,7 +47,7 @@
         </div>
 
 
-        <!--PARTE IN CUI INSERISCO LA SEARCHBAR ----------->
+        <!--PARTE IN CUI INSERISCO LA SEARCHBAR LEFT SIDE----------->
 
         <div class="under-username-top">
 
@@ -65,15 +65,20 @@
         </div>
 
 
+
         <div class="search-bar">
+
 
           <div class="input-search-container">
 
             <i class="fas fa-search"></i>
 
-            <input type="text" name="" placeholder="Cerca o inizia una nuova chat" value="">
+            <input type="text" name="" v-model="inputSearchingContacts"
+            placeholder="Cerca o inizia una nuova chat" value=""
+            @keyup.enter="searchingContacts()">
 
           </div>
+
 
         </div>
         <!-- /* LISTA DEI NOMI IN MEMORIA MESSAGGI */ -->
@@ -164,7 +169,7 @@
 
         <!-- INPUT BAR -->
         <input v-model="userMessage"  type="text" placeholder="Scrivi il tuo messaggio" name=""
-        @keyup.enter="userMessageSend(),contactAnswer()">
+        @keyup.enter="userMessageSend(),contactAnswer(),searchingContacts()">
 
       </div>
 

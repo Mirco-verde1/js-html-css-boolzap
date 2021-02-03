@@ -91,6 +91,7 @@ var app = new Vue({
 
     idxConct: 0,
     userMessage:'',
+
     autoAnswer:[
       'ooookkk',
       'ciao amico mio',
@@ -98,15 +99,16 @@ var app = new Vue({
       'fammici pensare un attimo',
       'credo di no',
       'lo so ti rispondo sempre alla stessa maniera'],
-      idxRandomAnsw :0
+
+      idxRandomAnsw :0,
+      inputSearchingContacts:'',
 
     },
 
     methods:{
-  // metodo per data
 
 
-// risposte random
+      // risposte random
       randomAutoAnswer:function(){
         this.idxRandomAnsw = this.autoAnswer.length
         let result = Math.floor((Math.random() * this.idxRandomAnsw));
@@ -118,7 +120,8 @@ var app = new Vue({
         this.idxConct = index;
       },
 
-// metodo con il quale stampo i messaggi scritti nell'input bar
+
+      // metodo con il quale stampo i messaggi scritti nell'input bar
       userMessageSend:function(){
         const message = {
           date: '10/01/2020 15:30:55',
@@ -128,7 +131,8 @@ var app = new Vue({
         this.contacts[this.idxConct].messages.push(message)
       },
 
-// risposta automatica dopo 1 secondo
+
+      // risposta automatica dopo 1 secondo
       contactAnswer:function(){
         const message = {
           date: '10/01/2020 15:30:55',
@@ -137,8 +141,38 @@ var app = new Vue({
         }
         let that=this;
         setTimeout(function(){
-            that.contacts[that.idxConct].messages.push(message)
+          that.contacts[that.idxConct].messages.push(message)
         },1000)
+
+      },
+
+// ricerca contatti nella lista tramite searchbar
+      searchingContacts:function(){
+
+        let names;
+        let searchName;
+        let result;
+
+        this.contacts.forEach((item, i) => {
+
+
+          names = item.name,
+
+          searchName = names.toLowerCase().startsWith(this.inputSearchingContacts);
+
+
+          if (searchName === true) {
+            result = names;
+            console.log(result);
+          }
+
+
+
+
+        })
+
+          this.inputSearchingContacts = ''
+          return result;
 
       }
 
