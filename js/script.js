@@ -2,6 +2,25 @@ var app = new Vue({
   el: '#myBoolZap',
 
   data:{
+        active:'hiddenClass',
+        idxConct: 0,
+        userMessage:'',
+        idxMessages:0,
+
+        autoAnswer:[
+          'ooookkk',
+          'ciao amico mio',
+          'si può fare dai',
+          'fammici pensare un attimo',
+          'credo di no',
+          'lo so ti rispondo sempre alla stessa maniera'],
+
+          idxRandomAnsw :0,
+          inputSearchingContacts:'',
+
+          idxSearchContacts:0,
+
+
     contacts: [
       {
         name: 'Michele',
@@ -89,21 +108,6 @@ var app = new Vue({
     ],
 
 
-    idxConct: 0,
-    userMessage:'',
-
-    autoAnswer:[
-      'ooookkk',
-      'ciao amico mio',
-      'si può fare dai',
-      'fammici pensare un attimo',
-      'credo di no',
-      'lo so ti rispondo sempre alla stessa maniera'],
-
-      idxRandomAnsw :0,
-      inputSearchingContacts:'',
-
-      idxSearchContacts:0
 
     },
 
@@ -112,7 +116,6 @@ var app = new Vue({
         let date = new Date();
         let dateString = date.toLocaleString();
         dateString= dateString.replace(',','')
-        console.log(dateString);
         return dateString;
       },
 
@@ -155,41 +158,6 @@ var app = new Vue({
 
       },
 
-      // ricerca contatti nella lista tramite searchbar
-      // searchingContacts:function(){
-      //
-      //   let names;
-      //   let searchName;
-      //   let result;
-      //   let idxSearch
-      //
-      //   this.contacts.forEach((item,i) => {
-      //
-      //
-      //     names = item.name,
-      //     idxSearch= i,
-      //
-      //     searchName = names.toLowerCase().startsWith(this.inputSearchingContacts);
-      //
-      //
-      //     if (searchName === true) {
-      //       result = names;
-      //       idxSearch= i;
-      //
-      //       var finalResult = this.contacts[idxSearch];
-      //
-      //       this.inputSearchingContacts = ''
-      //     }
-      //  console.log(finalResult);
-      //
-      //
-      //
-      //
-      //   })
-      //
-      //
-      // },
-
        searchingContacts:function(){
 
          this.contacts.forEach((item, i) => {
@@ -204,9 +172,42 @@ var app = new Vue({
          });
        this.inputSearchingContacts = ''
 
-     }
+     },
 
-    }
+     dropDownMenu:function(){
+
+      if (this.active === 'hiddenClass') {
+        this.active = 'showClass'
+      }else {
+        this.active = 'hiddenClass'
+      }
+
+    },
+
+  // ultimo accesso contact
+    lastAccessContact:function(idx){
+
+       let messages = this.contacts[idx].messages
+       let lastMsg = messages.length - 1;
+      let lastdate = messages[lastMsg].date;
+       return lastdate;
+
+
+    },
+
+
+    removeFromMessages:function(){
+
+    let message = this.contact[this.idxConct].messages;
+    let that = this
+    let remove = message.filter((element,index) =>{
+    return that.idxMessages = index;
+      console.log(idxMessages);
+    })
+
+    },
+
+  }
 
   });
 

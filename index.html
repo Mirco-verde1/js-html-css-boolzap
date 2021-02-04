@@ -125,11 +125,13 @@
             <img :src="'./img/avatar'+contacts[idxConct].avatar+'.jpg' " alt="immagine del contatto">
           </div>
 
+
+
           <!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
 
           <div class="text-access" >
             <span>{{contacts[idxConct].name}}</span>
-            <span>Ultimo accesso: {{getContactsDate()}}</span>
+            <span>Ultimo accesso: {{lastAccessContact(idxConct)}}</span>
 
           </div>
 
@@ -147,30 +149,36 @@
         </div>
 
 
+
         <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
         <!-- i messaggi verranno suddivisi e verra attribuita loro la classe received||sent -->
-        <div class="container-messages" v-for=" element in contacts[idxConct].messages"
+        <div class="container-messages" v-for=" (element,index) in contacts[idxConct].messages"
         :class= "{
           received:(element.status === 'received'),
           sent:(element.status === 'sent')
 
         }">
-
         {{element.text}}
-      <i class="fas fa-chevron-down"></i>
 
-        <div class="deleteMessage">
+        <i class="fas fa-chevron-down"   @click="dropDownMenu()"></i>
+
+        <!-- dropdown menù -->
+        <div class="deleteMessage" :class="active" >
+
           <ul>
-            <li>Delete</li>
-            <li>Messagge info</li>
+            <li>Delete<i class="far fa-trash-alt" @click="removeFromMessages()"></i></li>
+            <li>Messagge info<i class="fas fa-info"></i></li>
           </ul>
 
         </div>
 
-      </div>
 
+
+      </div>
+      <!-- end container messages -->
 
     </div>
+
 
 
     <!-- PARTE IN CUI VENGONO SCRITTI I MESSAGGI -->
