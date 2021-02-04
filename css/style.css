@@ -10,13 +10,6 @@ img{
   border-radius: 50px;
 }
 
-.hiddenClass{
-  display:none;
-}
-.showClass{
-  display: block;
-}
-
 /* CONTENITORE PRINCIPALE DELL'APP */
 .main-container{
   width: 100vw;
@@ -226,6 +219,7 @@ position: absolute;
 border-radius: 5px;
 box-shadow: 2px 2px #ccc;
 cursor: pointer;
+z-index: 5;
 }
 .deleteMessage ul li{
   list-style: none;
@@ -248,13 +242,14 @@ cursor: pointer;
   font-size: 13px;
   padding-left: 5px;
 }
-
+/* box in cui viene visualizzato il messaggio */
 .boxmessages{
   min-height: 50px;
   max-width: 40%;
   max-height: 50%;
   background: #fff;
 }
+
 .received{
   position: relative;
   padding: 16px;
@@ -267,7 +262,6 @@ cursor: pointer;
   max-height: 60%;
   background: #fff;
   border-radius: 10px;
-
 }
 
 .sent{

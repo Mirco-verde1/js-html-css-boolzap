@@ -12,21 +12,15 @@
 <body>
   <!-- CONTENITORE PRINCIPALE -->
   <div class="main-container" id="myBoolZap">
-    <div class="green-row">
-
-    </div>
-    <div class="grey-row">
-
-    </div>
+    <div class="green-row"></div>
+    <div class="grey-row"></div>
 
 
     <!-- CONTENITORE DELL'APP -->
     <div class="app-container ">
 
-
       <!-- PARTE SINISTRA DELL'APP -->
       <div class="side-left">
-
 
         <div class="user-name-top">
 
@@ -46,7 +40,6 @@
 
         </div>
 
-
         <!--PARTE IN CUI INSERISCO LA SEARCHBAR LEFT SIDE----------->
 
         <div class="under-username-top">
@@ -59,7 +52,6 @@
           <div class="new-notice">
             <span>Ricevi notifiche di nuovi messaggi</span>
             <span>Attiva notifiche di desktop</span>
-
           </div>
 
         </div>
@@ -68,26 +60,21 @@
 
         <div class="search-bar">
 
-
           <div class="input-search-container">
 
             <i class="fas fa-search"></i>
-            <!-- prendo l'input della search bar  -->
+            <!-- prendo l'input della search bar tramite v-model -->
             <input type="text" name="" v-model="inputSearchingContacts"
             placeholder="Cerca o inizia una nuova chat" value=""
             @keyup="searchingContacts()">
 
           </div>
 
-
         </div>
-
 
         <!-- /* LISTA DEI NOMI IN MEMORIA MESSAGGI */ -->
 
         <div class="names-tab">
-
-
 
           <!--AL CLICK MOSTRO I MESSAGGI IN MEMORIA PER OGNI CONTACTS-->
           <!--in base alla ricerca mostro i contatti cercati
@@ -101,7 +88,6 @@
           <span>{{names.name}}</span>
         </div>
 
-
       </div>
 
     </div>
@@ -111,12 +97,9 @@
     <!-- QUESTA è LA PARTE CENTRALE DELL'APP -->
     <div class="main-content">
 
-
       <!-- PARTE SUPERIORE 'ULTIMO ACCESSO' -->
 
       <div class="main-top">
-
-
 
         <div class="name-talk-to">
 
@@ -124,8 +107,6 @@
             <!--immagine profilo contacts generata dinamicamente  -->
             <img :src="'./img/avatar'+contacts[idxConct].avatar+'.jpg' " alt="immagine del contatto">
           </div>
-
-
 
           <!-- ULTIMO ACCESSO E IMMAGINE DELLA PERSONA CON CUI SI STA PARLANDO -->
 
@@ -143,12 +124,7 @@
 
           </div>
 
-
-
-
         </div>
-
-
 
         <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
         <!-- i messaggi verranno suddivisi e verra attribuita loro la classe received||sent -->
@@ -163,7 +139,7 @@
         <i class="fas fa-chevron-down"   @click="dropDownMenu(index)"></i>
 
         <!-- dropdown menù -->
-        <div class="deleteMessage" :class="{activeMsg:'show'}">
+        <div class="deleteMessage" :class="{activeMsg:'show'}" v-if="activeMsg.show && activeMsg.index === index">
 
           <ul>
             <li>Delete<i class="far fa-trash-alt" @click="deleteMessage(index)"></i></li>
@@ -172,14 +148,10 @@
 
         </div>
 
-
-
       </div>
       <!-- end container messages -->
 
     </div>
-
-
 
     <!-- PARTE IN CUI VENGONO SCRITTI I MESSAGGI -->
     <div class="main-bottom">
@@ -197,20 +169,13 @@
 
       </div>
 
-
       <div class="microphone">
         <i class="fas fa-microphone"></i>
-
       </div>
-
 
     </div>
 
-
   </div>
-
-
-
 
 </div>
 
