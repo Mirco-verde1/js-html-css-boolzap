@@ -2,7 +2,7 @@ var app = new Vue({
   el: '#myBoolZap',
 
   data:{
-        active:'hiddenClass',
+
         idxConct: 0,
         userMessage:'',
         idxMessages:0,
@@ -19,6 +19,11 @@ var app = new Vue({
           inputSearchingContacts:'',
 
           idxSearchContacts:0,
+
+          activeMsg:{
+            show:false,
+            index:false
+          },
 
 
     contacts: [
@@ -158,6 +163,7 @@ var app = new Vue({
 
       },
 
+   // metodo ricerca contacts tramite input nome
        searchingContacts:function(){
 
          this.contacts.forEach((item, i) => {
@@ -166,21 +172,17 @@ var app = new Vue({
            }
            else {
              item.visible = false;
-
            }
-
          });
-       this.inputSearchingContacts = ''
+
 
      },
-
-     dropDownMenu:function(){
-
-      if (this.active === 'hiddenClass') {
-        this.active = 'showClass'
-      }else {
-        this.active = 'hiddenClass'
-      }
+// metodo per dropdown menù
+     dropDownMenu:function(index){
+    this.activeMsg.show = !this.activeMsg.show;
+    this.activeMsg.index = index;
+    console.log(this.activeMsg.show);
+    console.log(this.activeMsg.index);
 
     },
 
@@ -195,17 +197,14 @@ var app = new Vue({
 
     },
 
+// metodo per cancellare i messaggi
+  deleteMessage:function(index){
+    this.contacts[this.idxConct].messages.splice(index,1)
+  }
 
-    removeFromMessages:function(){
 
-    let message = this.contact[this.idxConct].messages;
-    let that = this
-    let remove = message.filter((element,index) =>{
-    return that.idxMessages = index;
-      console.log(idxMessages);
-    })
 
-    },
+
 
   }
 

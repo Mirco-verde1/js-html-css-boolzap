@@ -75,7 +75,7 @@
             <!-- prendo l'input della search bar  -->
             <input type="text" name="" v-model="inputSearchingContacts"
             placeholder="Cerca o inizia una nuova chat" value=""
-            @keyup.enter="searchingContacts()">
+            @keyup="searchingContacts()">
 
           </div>
 
@@ -160,13 +160,13 @@
         }">
         {{element.text}}
 
-        <i class="fas fa-chevron-down"   @click="dropDownMenu()"></i>
+        <i class="fas fa-chevron-down"   @click="dropDownMenu(index)"></i>
 
         <!-- dropdown menù -->
-        <div class="deleteMessage" :class="active" >
+        <div class="deleteMessage" :class="{activeMsg:'show'}">
 
           <ul>
-            <li>Delete<i class="far fa-trash-alt" @click="removeFromMessages()"></i></li>
+            <li>Delete<i class="far fa-trash-alt" @click="deleteMessage(index)"></i></li>
             <li>Messagge info<i class="fas fa-info"></i></li>
           </ul>
 
