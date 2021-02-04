@@ -139,7 +139,7 @@
         <i class="fas fa-chevron-down"   @click="dropDownMenu(index)"></i>
 
         <!-- dropdown menù -->
-        <div class="deleteMessage" :class="{activeMsg:'show'}" v-if="activeMsg.show && activeMsg.index === index">
+        <div class="deleteMessage"  v-if="activeMsg.show && activeMsg.index === index">
 
           <ul>
             <li>Delete<i class="far fa-trash-alt" @click="deleteMessage(index)"></i></li>
