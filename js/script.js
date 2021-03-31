@@ -186,6 +186,12 @@ var app = new Vue({
 
       },
 
+
+      //dropdown menu off
+      DropOff:function(){
+        this.activeMsg.show=false;
+      },
+
       // ultimo accesso contact
       lastAccessContact:function(idx){
 

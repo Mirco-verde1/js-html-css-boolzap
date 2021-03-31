@@ -128,7 +128,9 @@
 
         <!-- PARTE IN CUI COMPAIONO I MESSAGGI RICEVUTI E INVIATI -->
         <!-- i messaggi verranno suddivisi e verra attribuita loro la classe received||sent -->
-        <div class="container-messages" v-for=" (element,index) in contacts[idxConct].messages"
+        <div class="container-messages" v-on:mouseleave="DropOff()"
+         v-for=" (element,index) in contacts[idxConct].messages"
+         
         :class= "{
           received:(element.status === 'received'),
           sent:(element.status === 'sent')
